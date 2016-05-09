@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="renderer" content="webkit">
+    <title>工程师管理</title>
+    <link rel="stylesheet" href="/css/admin.css"/>
+    <script src="/js/base/jquery-1.7.1.min.js"></script>
+    <script src="/js/base/treevc.js"></script>
+    <script type="text/javascript" src="/js/base/LeftMenu.js"></script>
+</head>
+<body>
+
+
+
+<div id="header" class="bg-dark-blue clearfix">
+    <a class="logo" href="javascript:;">小树创投</a>
+    <div class="top_menu">
+        <a href="javascript:;" class="selected" name="first_class_menu">订单管理</a>
+        <a href="javascript:;" name="first_class_menu" class="color-white">运营管理</a>
+        <a href="javascript:;" name="first_class_menu" class="color-white">工程师管理</a>
+        <a href="javascript:;" name="first_class_menu" class="color-white">客户管理</a>
+        <a href="javascript:;" name="first_class_menu" class="color-white">财务管理</a>
+        <a href="javascript:;" name="first_class_menu" class="color-white">统计管理</a>
+        <a href="javascript:;" name="first_class_menu" class="color-white">系统管理</a>
+    </div>
+    <div class="user">欢迎您 test | <a href="/admin/logout" class="color-white">退出</a></div>
+</div>
+
+<div id="container">
+    <div id="left" class="bg-dark-blue">
+        <div id="left_menu_zone" class="left_container">
+            <div class="colL" name="left_menu" id="left_menu_index_订单管理"
+                 style="display: block;">
+                <div class="subNav"><b class="arrow arrow-bottom"></b>订单管理</div>
+                <ul class="navContent" style="display:block">
+                    <li name="menu"><a href="/order/list">订单管理</a></li>
+                </ul>
+                <div class="subNav"><b class="arrow arrow-bottom"></b>客户服务</div>
+                <ul class="navContent" style="display:block">
+                    <li name="menu"><a href="/care/comment/list">评价管理</a></li>
+                </ul>
+            </div>
+            <div class="colL" name="left_menu" id="left_menu_index_运营管理"
+                 style="display: none;">
+                <div class="subNav"><b class="arrow arrow-bottom"></b>服务项管理</div>
+                <ul class="navContent" style="display:block">
+                    <li name="menu"><a href="/service/classes/list">服务分类管理</a></li>
+                    <li name="menu"><a href="/service/item/list">服务项管理</a></li>
+                </ul>
+                <div class="subNav"><b class="arrow arrow-bottom"></b>服务城市管理</div>
+                <ul class="navContent" style="display:block">
+                    <li name="menu"><a href="/service/city/list">服务城市</a></li>
+                </ul>
+            </div>
+            <div class="colL" name="left_menu" id="left_menu_index_工程师管理"
+                 style="display: none;">
+                <div class="subNav"><b class="arrow arrow-bottom"></b>工程师管理</div>
+                <ul class="navContent" style="display:block">
+                    <li name="menu"><a href="/engineer/engineer/list">工程师管理</a></li>
+                </ul>
+                <div class="subNav"><b class="arrow arrow-bottom"></b>技能管理</div>
+                <ul class="navContent" style="display:block">
+                    <li name="menu"><a href="/skill/skill/list">技能管理</a></li>
+                </ul>
+            </div>
+            <div class="colL" name="left_menu" id="left_menu_index_客户管理"
+                 style="display: none;">
+                <div class="subNav"><b class="arrow arrow-bottom"></b>客户管理</div>
+                <ul class="navContent" style="display:block">
+                    <li name="menu"><a href="/customer/customer/list">临时客户</a></li>
+                </ul>
+            </div>
+            <div class="colL" name="left_menu" id="left_menu_index_财务管理"
+                 style="display: none;">
+                <div class="subNav"><b class="arrow arrow-bottom"></b>对账流水</div>
+                <ul class="navContent" style="display:block">
+                    <li name="menu"><a href="/finance/account/list">对账流水</a></li>
+                </ul>
+                <div class="subNav"><b class="arrow arrow-bottom"></b>收入明细</div>
+                <ul class="navContent" style="display:block">
+                    <li name="menu"><a href="/finance/detail/list">收入明细</a></li>
+                </ul>
+                <div class="subNav"><b class="arrow arrow-bottom"></b>提现管理</div>
+                <ul class="navContent" style="display:block">
+                    <li name="menu"><a href="/finance/extract/list">提现管理</a></li>
+                </ul>
+                <div class="subNav"><b class="arrow arrow-bottom"></b>发票管理</div>
+                <ul class="navContent" style="display:block">
+                    <li name="menu"><a href="/finance/invoice/list">发票管理</a></li>
+                </ul>
+            </div>
+            <div class="colL" name="left_menu" id="left_menu_index_统计管理"
+                 style="display: none;">
+                <div class="subNav"><b class="arrow arrow-bottom"></b>提现统计</div>
+                <ul class="navContent" style="display:block">
+                    <li name="menu"><a href="/statistic/withdraw/list">提现统计</a></li>
+                </ul>
+                <div class="subNav"><b class="arrow arrow-bottom"></b>订单统计</div>
+                <ul class="navContent" style="display:block">
+                    <li name="menu"><a href="/statistic/order/list">订单统计</a></li>
+                </ul>
+            </div>
+            <div class="colL" name="left_menu" id="left_menu_index_系统管理"
+                 style="display: none;">
+                <div class="subNav"><b class="arrow arrow-bottom"></b>个人设置</div>
+                <ul class="navContent" style="display:block">
+                    <li name="menu"><a href="/admin/info/change_password">修改密码</a></li>
+                </ul>
+                <div class="subNav"><b class="arrow arrow-bottom"></b>客户端管理</div>
+                <ul class="navContent" style="display:block">
+                    <li name="menu"><a href="/app/version/index">版本管理</a></li>
+                    <li name="menu"><a href="/app/suggest/index">意见反馈</a></li>
+                </ul>
+                <div class="subNav"><b class="arrow arrow-bottom"></b>系统设置</div>
+                <ul class="navContent" style="display:block">
+                    <li name="menu"><a href="/admin/user/list">系统用户管理</a></li>
+                    <li name="menu"><a href="/admin/role/list">角色管理</a></li>
+                </ul>
+                <div class="subNav"><b class="arrow arrow-bottom"></b>业务参数设置</div>
+                <ul class="navContent" style="display:block">
+                    <li name="menu"><a href="/config/ratio">分成比例设置</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+    <div id="middle">
+        <div class="relative">
+            <a href="javascript:;" class="leftMenuBtnHide show"></a>
+            <a href="javascript:;" class="leftMenuBtnShow hide"></a>
+        </div>
+    </div>
+    <div id="right">
+        <div class="p-bottom16">
+            <div class="location clearfix"><i></i>工程师管理
+                <input type="hidden" id="link_url" value="/engineer/engineer/list">
+                <div class="f-right"><input type="button" id="refresh" class="btn-grey" value="刷新" data-refresh="right.html">
+                    <span><a href="/engineer/engineer/add" action="/engineer/engineer/add" target="_blank" class="btn-green m_left15">添加工程师</a></span>
+                </div>
+            </div>
+
+            <div class="search">
+                <form id="search_form" onsubmit="return false;" autocomplete="off">
+                    <div class="clearfix">
+                        <p><label>工程师类型：</label>
+                            <select class="select_text " name="type">
+                                <option value="" selected="selected">全部</option>
+                                <option value="1">护航员工</option>
+                            </select>
+                        </p>
+                        <p><label>闪服工号：</label><input type="text" name="work_id" class="input_text width100"/></p>
+                        <p><label>姓名：</label><input type="text" name="name" class="input_text width100"/></p>
+                        <p><label>手机号：</label><input type="text" name="mobile" class="input_text width100"/></p>
+                        <p><label>所在城市：</label>
+                            <select class="select_text " name="province">
+                                <option value="" selected="selected">请选择省份</option>
+                            </select>&nbsp;&nbsp;
+                            <select class="select_text " name="city">
+                                <option value="" selected="selected">请选择城市</option>
+                            </select>&nbsp;&nbsp;
+                        </p>
+                        <p><label>审核状态：</label>
+                            <input type="radio" name="status" value="0" checked/><span>待审核</span>
+                            <input type="radio" name="status" value="1"/><span>已通过</span>
+                            <input type="radio" name="status" value="2"/><span>已拒绝</span>
+                            <input type="radio" name="status" value=""/><span style="padding-right: 0px;">全部</span></p>
+                        <p><label>来源：</label><select class="select_text " name="source">
+                            <option value="" selected="selected">全部</option>
+                            <option value="1">Android APP</option>
+                            <option value="2">iOS APP</option>
+                            <option value="0">后台</option>
+                        </select>
+                        <p><label>注册日期：</label>
+                            <input type="text" id="created_at_start" onclick="laydate({elem: '#created_at_start'});" name="created_at_start" class="input_text date" data-date-scroll="true"><span class="between">至</span>
+                            <input type="text" id="created_at_end" onclick="laydate({elem: '#created_at_end'});" name="created_at_end" class="input_text date" data-date-scroll="true">
+                        </p>
+                        <p><input type="button" id="zink_search" class="btn-grey search_btn" value="查询"/></p>
+                    </div>
+                </form>
+            </div>
+
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" id="table_list" name="table_list" class="list-table">
+                <thead>
+                <tr>
+                    <th width="10%">闪服工号</th>
+                    <th width="6%">姓名</th>
+                    <th width="9%">手机号</th>
+                    <th width="7%">所在城市</th>
+                    <th width="8%">
+                        <div class="more">
+                            <a href="javascript:;" class="sort_select" data-type="show_down_list">性别
+                                (<span name="current_filter"  default="全部">全部</span>)
+                            </a>
+                            <ul class="more-list more-list-top1 hide" data-field="gender" style="display: none;">
+                                <li data-type="filter_with" class="li-bg" default-filter="" data-val="">全部</li>
+                                <li data-type="filter_with" data-val="1">男</li>
+                                <li data-type="filter_with" data-val="2">女</li>
+                            </ul>
+                        </div>
+                    </th>
+                    <th width="8%"><div class="more"><a href="javascript:;" class="sort_select" data-type="show_down_list">学历(<span name="current_filter"  default="全部">全部</span>)</a>
+                        <ul class="more-list more-list-top1 hide" data-field="education" style="display: none;">
+                            <li data-type="filter_with" class="li-bg" default-filter="" data-val="">全部</li>
+                            <li data-type="filter_with" data-val="1">大专以下</li>
+                            <li data-type="filter_with" data-val="2">大专</li>
+                            <li data-type="filter_with" data-val="3">本科</li>
+                            <li data-type="filter_with" data-val="4">硕士</li>
+                            <li data-type="filter_with" data-val="5">硕士以上</li>
+                        </ul></div>
+                    </th>
+                    <th width="8%"><div class="more"><a href="javascript:;" class="sort_select"  data-type="show_down_list">工作年限(<span name="current_filter"  default="全部">全部</span>)</a>
+                        <ul class="more-list more-list-top1 hide" data-field="seniority" style="display: none;">
+                            <li data-type="filter_with" class="li-bg" default-filter="" data-val="">全部</li>
+                            <li data-type="filter_with" data-val="1">1年以下</li>
+                            <li data-type="filter_with" data-val="2">1-3年</li>
+                            <li data-type="filter_with" data-val="3">3-5年</li>
+                            <li data-type="filter_with" data-val="4">5-10年</li>
+                            <li data-type="filter_with" data-val="5">10年以上</li>
+                        </ul></div>
+                    </th>
+                    <th width="9%">
+                        <a href="javascript:;" data-default-field data-type="order_by" data-field="created_at" class="sort_desc"
+                           data-order="asc" default-order="desc">注册时间</a></th>
+                    <th width="7%">审核状态</th>
+                    <th width="9%"><a href="javascript:;" data-type="order_by" data-field="audit_at" class="sort_desc_grey"
+                                      data-order="desc" default-order="desc">审核时间</a></th>
+                    <th width="7%">审核者</th>
+                    <th width="12%">操作</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr id="index_20">
+                    <td>SF01000000</td>
+                    <td name="remark" data-val=""><span>创建账户</span></td>
+                    <td>13661377777</td>
+                    <td>北京市</td>
+                    <td>男</td>
+                    <td>本科</td>
+                    <td>1-3年</td>
+                    <td>2016-05-05 <span class="nowrap">16:50</span></td>
+                    <td name="audit_remark" data-val=""><span>
+        已通过</span>
+                    </td>
+                    <td>2016-05-05 <span class="nowrap">16:50</span></td>
+                    <td>jhyang</td>
+                    <td name="operate" class="color_blue operate_box">
+                        <span><a href="/engineer/engineer/save?id=20" action="/engineer/engineer/save" target="_blank">编辑</a></span>
+                        <span><a href="/engineer/engineer/detail?id=20" action="/engineer/engineer/detail" target="_blank">查看</a></span>
+                        <span><a href="javascript:;" action="/engineer/engineer/remark" data-type="popup" data-title="添加备注" data-url="/engineer/engineer/remark?id=20&amp;type=1">备注</a></span>
+                    </td>
+                </tr>
+
+                <tr id="index_19">
+                    <td></td>
+                    <td name="remark" data-val=""><span>工程师</span></td>
+                    <td></td>
+                    <td>市</td>
+                    <td>男</td>
+                    <td>其他</td>
+                    <td>1年以下</td>
+                    <td>2016-04-29 <span class="nowrap">12:30</span></td>
+                    <td name="audit_remark" data-val=""><span>
+        待审核</span>
+                    </td>
+                    <td><span class="nowrap"></span></td>
+                    <td></td>
+                    <td name="operate" class="color_blue operate_box">
+                        <span><a href="/engineer/engineer/audit?id=19" action="/engineer/engineer/audit" target="_blank">审核</a></span>
+                        <span><a href="/engineer/engineer/save?id=19" action="/engineer/engineer/save" target="_blank">编辑</a></span>
+                        <span><a href="/engineer/engineer/detail?id=19" action="/engineer/engineer/detail" target="_blank">查看</a></span>
+                        <span><a href="javascript:;" action="/engineer/engineer/remark" data-type="popup" data-title="添加备注" data-url="/engineer/engineer/remark?id=19&amp;type=1">备注</a></span>
+                    </td>
+                </tr>
+
+                <tr id="index_18">
+                    <td>SF41300001</td>
+                    <td name="remark" data-val=""><span>gcs</span></td>
+                    <td>13222112112</td>
+                    <td>抚顺市</td>
+                    <td>女</td>
+                    <td>本科</td>
+                    <td>1-3年</td>
+                    <td>2016-04-27 <span class="nowrap">09:55</span></td>
+                    <td name="audit_remark" data-val=""><span>
+        已通过</span>
+                    </td>
+                    <td>2016-04-27 <span class="nowrap">09:55</span></td>
+                    <td>lliu</td>
+                    <td name="operate" class="color_blue operate_box">
+                        <span><a href="/engineer/engineer/save?id=18" action="/engineer/engineer/save" target="_blank">编辑</a></span>
+                        <span><a href="/engineer/engineer/detail?id=18" action="/engineer/engineer/detail" target="_blank">查看</a></span>
+                        <span><a href="javascript:;" action="/engineer/engineer/remark" data-type="popup" data-title="添加备注" data-url="/engineer/engineer/remark?id=18&amp;type=1">备注</a></span>
+                    </td>
+                </tr>
+
+                <tr id="index_17">
+                    <td>SF02500002</td>
+                    <td name="remark" data-val=""><span>gcs-6*</span></td>
+                    <td>15632133333</td>
+                    <td>南京市</td>
+                    <td>男</td>
+                    <td>本科</td>
+                    <td>1-3年</td>
+                    <td>2016-04-26 <span class="nowrap">11:55</span></td>
+                    <td name="audit_remark" data-val=""><span>
+        已通过</span>
+                    </td>
+                    <td>2016-04-26 <span class="nowrap">11:55</span></td>
+                    <td>lliu</td>
+                    <td name="operate" class="color_blue operate_box">
+                        <span><a href="/engineer/engineer/save?id=17" action="/engineer/engineer/save" target="_blank">编辑</a></span>
+                        <span><a href="/engineer/engineer/detail?id=17" action="/engineer/engineer/detail" target="_blank">查看</a></span>
+                        <span><a href="javascript:;" action="/engineer/engineer/remark" data-type="popup" data-title="添加备注" data-url="/engineer/engineer/remark?id=17&amp;type=1">备注</a></span>
+                    </td>
+                </tr>
+
+                <tr id="index_16">
+                    <td>SF55800001</td>
+                    <td name="remark" data-val=""><span>gcs-5*</span></td>
+                    <td>13521223112</td>
+                    <td>亳州市</td>
+                    <td>男</td>
+                    <td>本科</td>
+                    <td>1-3年</td>
+                    <td>2016-04-26 <span class="nowrap">11:54</span></td>
+                    <td name="audit_remark" data-val=""><span>
+        已通过</span>
+                    </td>
+                    <td>2016-04-26 <span class="nowrap">11:54</span></td>
+                    <td>lliu</td>
+                    <td name="operate" class="color_blue operate_box">
+                        <span><a href="/engineer/engineer/save?id=16" action="/engineer/engineer/save" target="_blank">编辑</a></span>
+                        <span><a href="/engineer/engineer/detail?id=16" action="/engineer/engineer/detail" target="_blank">查看</a></span>
+                        <span><a href="javascript:;" action="/engineer/engineer/remark" data-type="popup" data-title="添加备注" data-url="/engineer/engineer/remark?id=16&amp;type=1">备注</a></span>
+                    </td>
+                </tr>
+
+                <tr id="index_15">
+                    <td>SF79100001</td>
+                    <td name="remark" data-val=""><span>gcs-4*</span></td>
+                    <td>13212112323</td>
+                    <td>南昌市</td>
+                    <td>女</td>
+                    <td>本科</td>
+                    <td>1-3年</td>
+                    <td>2016-04-26 <span class="nowrap">11:49</span></td>
+                    <td name="audit_remark" data-val=""><span>
+        已通过</span>
+                    </td>
+                    <td>2016-04-26 <span class="nowrap">11:49</span></td>
+                    <td>lliu</td>
+                    <td name="operate" class="color_blue operate_box">
+                        <span><a href="/engineer/engineer/save?id=15" action="/engineer/engineer/save" target="_blank">编辑</a></span>
+                        <span><a href="/engineer/engineer/detail?id=15" action="/engineer/engineer/detail" target="_blank">查看</a></span>
+                        <span><a href="javascript:;" action="/engineer/engineer/remark" data-type="popup" data-title="添加备注" data-url="/engineer/engineer/remark?id=15&amp;type=1">备注</a></span>
+                    </td>
+                </tr>
+
+                <tr id="index_14">
+                    <td>SF71900002</td>
+                    <td name="remark" data-val=""><span>gcs-3*</span></td>
+                    <td>13421221211</td>
+                    <td>神农架市</td>
+                    <td>女</td>
+                    <td>本科</td>
+                    <td>1-3年</td>
+                    <td>2016-04-26 <span class="nowrap">11:47</span></td>
+                    <td name="audit_remark" data-val=""><span>
+        已通过</span>
+                    </td>
+                    <td>2016-04-26 <span class="nowrap">11:47</span></td>
+                    <td>lliu</td>
+                    <td name="operate" class="color_blue operate_box">
+                        <span><a href="/engineer/engineer/save?id=14" action="/engineer/engineer/save" target="_blank">编辑</a></span>
+                        <span><a href="/engineer/engineer/detail?id=14" action="/engineer/engineer/detail" target="_blank">查看</a></span>
+                        <span><a href="javascript:;" action="/engineer/engineer/remark" data-type="popup" data-title="添加备注" data-url="/engineer/engineer/remark?id=14&amp;type=1">备注</a></span>
+                    </td>
+                </tr>
+
+                <tr id="index_13">
+                    <td>SF51000001</td>
+                    <td name="remark" data-val=""><span>gcs-2*</span></td>
+                    <td>13222213422</td>
+                    <td>无锡市</td>
+                    <td>男</td>
+                    <td>本科</td>
+                    <td>1-3年</td>
+                    <td>2016-04-26 <span class="nowrap">11:45</span></td>
+                    <td name="audit_remark" data-val=""><span>
+        已通过</span>
+                    </td>
+                    <td>2016-04-26 <span class="nowrap">11:45</span></td>
+                    <td>lliu</td>
+                    <td name="operate" class="color_blue operate_box">
+                        <span><a href="/engineer/engineer/save?id=13" action="/engineer/engineer/save" target="_blank">编辑</a></span>
+                        <span><a href="/engineer/engineer/detail?id=13" action="/engineer/engineer/detail" target="_blank">查看</a></span>
+                        <span><a href="javascript:;" action="/engineer/engineer/remark" data-type="popup" data-title="添加备注" data-url="/engineer/engineer/remark?id=13&amp;type=1">备注</a></span>
+                    </td>
+                </tr>
+
+                <tr id="index_12">
+                    <td>SF01000021</td>
+                    <td name="remark" data-val=""><span>工程师9</span></td>
+                    <td>13000000002</td>
+                    <td>北京市</td>
+                    <td>女</td>
+                    <td>硕士</td>
+                    <td>1-3年</td>
+                    <td>2016-04-26 <span class="nowrap">11:39</span></td>
+                    <td name="audit_remark" data-val="juju"><span>
+        已拒绝</span>
+                    </td>
+                    <td>2016-04-26 <span class="nowrap">11:41</span></td>
+                    <td>lliu</td>
+                    <td name="operate" class="color_blue operate_box">
+                        <span><a href="/engineer/engineer/save?id=12" action="/engineer/engineer/save" target="_blank">编辑</a></span>
+                        <span><a href="/engineer/engineer/detail?id=12" action="/engineer/engineer/detail" target="_blank">查看</a></span>
+                        <span><a href="javascript:;" action="/engineer/engineer/remark" data-type="popup" data-title="添加备注" data-url="/engineer/engineer/remark?id=12&amp;type=1">备注</a></span>
+                    </td>
+                </tr>
+
+                <tr id="index_11">
+                    <td>SF01000020</td>
+                    <td name="remark" data-val=""><span>工程师8</span></td>
+                    <td>13000000001</td>
+                    <td>北京市</td>
+                    <td>男</td>
+                    <td>本科</td>
+                    <td>1年以下</td>
+                    <td>2016-04-26 <span class="nowrap">11:38</span></td>
+                    <td name="audit_remark" data-val=""><span>
+        已通过</span>
+                    </td>
+                    <td>2016-04-26 <span class="nowrap">11:41</span></td>
+                    <td>lliu</td>
+                    <td name="operate" class="color_blue operate_box">
+                        <span><a href="/engineer/engineer/save?id=11" action="/engineer/engineer/save" target="_blank">编辑</a></span>
+                        <span><a href="/engineer/engineer/detail?id=11" action="/engineer/engineer/detail" target="_blank">查看</a></span>
+                        <span><a href="javascript:;" action="/engineer/engineer/remark" data-type="popup" data-title="添加备注" data-url="/engineer/engineer/remark?id=11&amp;type=1">备注</a></span>
+                    </td>
+                </tr>
+
+                <tr id="index_10">
+                    <td>SF90800004</td>
+                    <td name="remark" data-val="飞飞飞"><span>工程师7</span></td>
+                    <td>13000000000</td>
+                    <td>阿图什市</td>
+                    <td>女</td>
+                    <td>大专</td>
+                    <td>3-5年</td>
+                    <td>2016-04-26 <span class="nowrap">11:35</span></td>
+                    <td name="audit_remark" data-val=""><span>
+        已通过</span>
+                    </td>
+                    <td>2016-05-09 <span class="nowrap">15:08</span></td>
+                    <td>oujuan</td>
+                    <td name="operate" class="color_blue operate_box">
+                        <span><a href="/engineer/engineer/save?id=10" action="/engineer/engineer/save" target="_blank">编辑</a></span>
+                        <span><a href="/engineer/engineer/detail?id=10" action="/engineer/engineer/detail" target="_blank">查看</a></span>
+                        <span><a href="javascript:;" action="/engineer/engineer/remark" data-type="popup" data-title="添加备注" data-url="/engineer/engineer/remark?id=10&amp;type=1">备注</a></span>
+                    </td>
+                </tr>
+
+                <tr id="index_9">
+                    <td>SF35500001</td>
+                    <td name="remark" data-val=""><span>gcs-1</span></td>
+                    <td>13222222222</td>
+                    <td>长治市</td>
+                    <td>男</td>
+                    <td>本科</td>
+                    <td>1-3年</td>
+                    <td>2016-04-26 <span class="nowrap">10:52</span></td>
+                    <td name="audit_remark" data-val=""><span>
+        已通过</span>
+                    </td>
+                    <td>2016-04-26 <span class="nowrap">10:52</span></td>
+                    <td>lliu</td>
+                    <td name="operate" class="color_blue operate_box">
+                        <span><a href="/engineer/engineer/save?id=9" action="/engineer/engineer/save" target="_blank">编辑</a></span>
+                        <span><a href="/engineer/engineer/detail?id=9" action="/engineer/engineer/detail" target="_blank">查看</a></span>
+                        <span><a href="javascript:;" action="/engineer/engineer/remark" data-type="popup" data-title="添加备注" data-url="/engineer/engineer/remark?id=9&amp;type=1">备注</a></span>
+                    </td>
+                </tr>
+
+                <tr id="index_8">
+                    <td>SF71900001</td>
+                    <td name="remark" data-val=""><span>工程师6*</span></td>
+                    <td>13422222224</td>
+                    <td>神农架市</td>
+                    <td>男</td>
+                    <td>本科</td>
+                    <td>1-3年</td>
+                    <td>2016-04-25 <span class="nowrap">15:36</span></td>
+                    <td name="audit_remark" data-val=""><span>
+        已通过</span>
+                    </td>
+                    <td>2016-04-25 <span class="nowrap">15:36</span></td>
+                    <td>lliu</td>
+                    <td name="operate" class="color_blue operate_box">
+                        <span><a href="/engineer/engineer/save?id=8" action="/engineer/engineer/save" target="_blank">编辑</a></span>
+                        <span><a href="/engineer/engineer/detail?id=8" action="/engineer/engineer/detail" target="_blank">查看</a></span>
+                        <span><a href="javascript:;" action="/engineer/engineer/remark" data-type="popup" data-title="添加备注" data-url="/engineer/engineer/remark?id=8&amp;type=1">备注</a></span>
+                    </td>
+                </tr>
+
+                <tr id="index_7">
+                    <td>SF45200001</td>
+                    <td name="remark" data-val=""><span>工程师5</span></td>
+                    <td>13211111112</td>
+                    <td>齐齐哈尔市</td>
+                    <td>男</td>
+                    <td>本科</td>
+                    <td>1-3年</td>
+                    <td>2016-04-25 <span class="nowrap">15:35</span></td>
+                    <td name="audit_remark" data-val=""><span>
+        已通过</span>
+                    </td>
+                    <td>2016-04-25 <span class="nowrap">15:35</span></td>
+                    <td>lliu</td>
+                    <td name="operate" class="color_blue operate_box">
+                        <span><a href="/engineer/engineer/save?id=7" action="/engineer/engineer/save" target="_blank">编辑</a></span>
+                        <span><a href="/engineer/engineer/detail?id=7" action="/engineer/engineer/detail" target="_blank">查看</a></span>
+                        <span><a href="javascript:;" action="/engineer/engineer/remark" data-type="popup" data-title="添加备注" data-url="/engineer/engineer/remark?id=7&amp;type=1">备注</a></span>
+                    </td>
+                </tr>
+
+                <tr id="index_6">
+                    <td>SF51600001</td>
+                    <td name="remark" data-val=""><span>工程师4</span></td>
+                    <td>13277777777</td>
+                    <td>徐州市</td>
+                    <td>男</td>
+                    <td>本科</td>
+                    <td>1-3年</td>
+                    <td>2016-04-25 <span class="nowrap">15:34</span></td>
+                    <td name="audit_remark" data-val=""><span>
+        已通过</span>
+                    </td>
+                    <td>2016-04-25 <span class="nowrap">15:34</span></td>
+                    <td>lliu</td>
+                    <td name="operate" class="color_blue operate_box">
+                        <span><a href="/engineer/engineer/save?id=6" action="/engineer/engineer/save" target="_blank">编辑</a></span>
+                        <span><a href="/engineer/engineer/detail?id=6" action="/engineer/engineer/detail" target="_blank">查看</a></span>
+                        <span><a href="javascript:;" action="/engineer/engineer/remark" data-type="popup" data-title="添加备注" data-url="/engineer/engineer/remark?id=6&amp;type=1">备注</a></span>
+                    </td>
+                </tr>
+
+                <tr id="index_5">
+                    <td>SF01000019</td>
+                    <td name="remark" data-val=""><span>工程师3</span></td>
+                    <td>13422222222</td>
+                    <td>北京市</td>
+                    <td>女</td>
+                    <td>本科</td>
+                    <td>1-3年</td>
+                    <td>2016-04-25 <span class="nowrap">15:30</span></td>
+                    <td name="audit_remark" data-val=""><span>
+        已通过</span>
+                    </td>
+                    <td>2016-04-25 <span class="nowrap">15:30</span></td>
+                    <td>lliu</td>
+                    <td name="operate" class="color_blue operate_box">
+                        <span><a href="/engineer/engineer/save?id=5" action="/engineer/engineer/save" target="_blank">编辑</a></span>
+                        <span><a href="/engineer/engineer/detail?id=5" action="/engineer/engineer/detail" target="_blank">查看</a></span>
+                        <span><a href="javascript:;" action="/engineer/engineer/remark" data-type="popup" data-title="添加备注" data-url="/engineer/engineer/remark?id=5&amp;type=1">备注</a></span>
+                    </td>
+                </tr>
+
+                <tr id="index_4">
+                    <td>SF01000018</td>
+                    <td name="remark" data-val=""><span>工程师2</span></td>
+                    <td>13211111111</td>
+                    <td>北京市</td>
+                    <td>男</td>
+                    <td>本科</td>
+                    <td>1-3年</td>
+                    <td>2016-04-25 <span class="nowrap">15:28</span></td>
+                    <td name="audit_remark" data-val=""><span>
+        已通过</span>
+                    </td>
+                    <td>2016-04-25 <span class="nowrap">15:28</span></td>
+                    <td>lliu</td>
+                    <td name="operate" class="color_blue operate_box">
+                        <span><a href="/engineer/engineer/save?id=4" action="/engineer/engineer/save" target="_blank">编辑</a></span>
+                        <span><a href="/engineer/engineer/detail?id=4" action="/engineer/engineer/detail" target="_blank">查看</a></span>
+                        <span><a href="javascript:;" action="/engineer/engineer/remark" data-type="popup" data-title="添加备注" data-url="/engineer/engineer/remark?id=4&amp;type=1">备注</a></span>
+                    </td>
+                </tr>
+
+                <tr id="index_3">
+                    <td>SF01000017</td>
+                    <td name="remark" data-val=""><span>工程师1</span></td>
+                    <td>13650502121</td>
+                    <td>北京市</td>
+                    <td>女</td>
+                    <td>本科</td>
+                    <td>1-3年</td>
+                    <td>2016-04-25 <span class="nowrap">15:26</span></td>
+                    <td name="audit_remark" data-val=""><span>
+        已通过</span>
+                    </td>
+                    <td>2016-04-25 <span class="nowrap">15:26</span></td>
+                    <td>lliu</td>
+                    <td name="operate" class="color_blue operate_box">
+                        <span><a href="/engineer/engineer/save?id=3" action="/engineer/engineer/save" target="_blank">编辑</a></span>
+                        <span><a href="/engineer/engineer/detail?id=3" action="/engineer/engineer/detail" target="_blank">查看</a></span>
+                        <span><a href="javascript:;" action="/engineer/engineer/remark" data-type="popup" data-title="添加备注" data-url="/engineer/engineer/remark?id=3&amp;type=1">备注</a></span>
+                    </td>
+                </tr>
+
+                <tr id="index_2">
+                    <td>SF02100001</td>
+                    <td name="remark" data-val=""><span>待定</span></td>
+                    <td>13421112121</td>
+                    <td>上海市</td>
+                    <td>女</td>
+                    <td>本科</td>
+                    <td>1-3年</td>
+                    <td>2016-04-25 <span class="nowrap">11:46</span></td>
+                    <td name="audit_remark" data-val=""><span>
+        已通过</span>
+                    </td>
+                    <td>2016-04-25 <span class="nowrap">11:46</span></td>
+                    <td>lliu</td>
+                    <td name="operate" class="color_blue operate_box">
+                        <span><a href="/engineer/engineer/save?id=2" action="/engineer/engineer/save" target="_blank">编辑</a></span>
+                        <span><a href="/engineer/engineer/detail?id=2" action="/engineer/engineer/detail" target="_blank">查看</a></span>
+                        <span><a href="javascript:;" action="/engineer/engineer/remark" data-type="popup" data-title="添加备注" data-url="/engineer/engineer/remark?id=2&amp;type=1">备注</a></span>
+                    </td>
+                </tr>
+
+                <tr id="index_1">
+                    <td>SF37700001</td>
+                    <td name="remark" data-val=""><span>六六</span></td>
+                    <td>15000000000</td>
+                    <td>南阳市</td>
+                    <td>男</td>
+                    <td>硕士</td>
+                    <td>1-3年</td>
+                    <td>2016-04-25 <span class="nowrap">11:39</span></td>
+                    <td name="audit_remark" data-val=""><span>
+        已通过</span>
+                    </td>
+                    <td>2016-04-25 <span class="nowrap">11:39</span></td>
+                    <td>lliu</td>
+                    <td name="operate" class="color_blue operate_box">
+                        <span><a href="/engineer/engineer/save?id=1" action="/engineer/engineer/save" target="_blank">编辑</a></span>
+                        <span><a href="/engineer/engineer/detail?id=1" action="/engineer/engineer/detail" target="_blank">查看</a></span>
+                        <span><a href="javascript:;" action="/engineer/engineer/remark" data-type="popup" data-title="添加备注" data-url="/engineer/engineer/remark?id=1&amp;type=1">备注</a></span>
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+            <div id="foot_box"></div>
+
+
+            <script src="/common/regionjs"></script>
+            <script src="/js/base/regionSelector.js"></script>
+            <script type="text/javascript" src="/js/base/plugins/laydate/laydate.js"></script>
+            <script>
+                var provinceChange = new TVC.regionSelector("select[name='province']");
+                $("select[name='province']").change(function () {
+                    provinceChange.provinceChanged("select[name='province']", "select[name='city']", "select[name='region']");
+                });
+            </script>
+            <script src="/js/base/listTable.js"></script>
+            <script>
+                $(function(){
+                    var x=10;
+                    var y=0;
+                    $("#table_list tbody").on('mouseover',"td[name=remark],td[name=audit_remark]",function(e){
+//            $(this).addClass("pointer");
+                        var remark = $(this).attr("data-val");
+                        if (!remark) {
+                            return;
+                        }
+                        var tooltip = "<div id='tooltip'>"+remark+"</div>";
+                        $("body").append(tooltip);
+                        $("#tooltip").css({
+                            "top": (e.pageY+y)+"px",
+                            "left":(e.pageX+x)+"px"
+                        }).show("fast");
+                    }).on('mouseout','td[name=remark],td[name=audit_remark]',function(){
+                        $("#tooltip").remove();
+                    }).on('mousemove','td[name=remark],td[name=audit_remark]',function(e){
+                        $("#tooltip").css({
+                            "top": (e.pageY+y)+"px",
+                            "left":(e.pageX+x)+"px"
+                        });
+                    });
+
+                });
+            </script>
+
+        </div>
+    </div>
+</div>
+
+
+<script src="/js/common/container.js"></script>
+<script src="/js/common/right.js"></script>
+</body>
+</html>
