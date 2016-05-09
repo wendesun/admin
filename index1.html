@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/admin.css"/>
+    <script src="js/base/jquery-1.7.1.min.js"></script>
+    <script src="js/base/container.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#container").load("right.html",function(){
+                $(this).append("aaaa");
+            });
+        });
+    </script>
+</head>
+<body>
+
+
+
+    <div id="wapper">
+        <div id="left" class="bg-dark-blue">
+            <div class="logo"><img src="images/logo.jpg" alt=""/></div>
+            <div class="colL" id="left_menu">
+                <div class="subNav"><b class="arrow arrow-bottom"></b>运营管理</div>
+                <ul class="navContent" style="display:block">
+                    <li name="menu"><a href="/scenic/search">用户管理</a></li>
+                </ul>
+                <div class="subNav"><b class="arrow arrow-bottom"></b>景区信息管理</div>
+                <ul class="navContent">
+                    <li name="menu"><a href="/app/version/index" class="selected">景区管理</a></li>
+                    <li name="menu"><a href="/app/suggest/index">班次管理</a></li>
+                    <li name="menu"><a href="/app/suggest/index">车辆管理</a></li>
+                    <li name="menu"><a href="/app/suggest/index">司机管理</a></li>
+                    <li name="menu"><a href="/app/suggest/index">随车人员管理</a></li>
+                </ul>
+                <div class="subNav"><b class="arrow arrow-bottom"></b>销售管理</div>
+                <ul class="navContent">
+                    <li name="menu"><a href="/admin/user/index">车票管理</a></li>
+                    <li name="menu"><a href="/admin/role/index">优惠券管理</a></li>
+                    <li name="menu"><a href="/admin/user/index">线路次卡管理</a></li>
+                    <li name="menu"><a href="/admin/role/index">次卡活动管理</a></li>
+                    <li name="menu"><a href="/admin/role/index">次卡管理</a></li>
+                </ul>
+                <div class="subNav"><b class="arrow arrow-bottom"></b>系统设置</div>
+                <ul class="navContent">
+                    <li name="menu"><a href="/admin/user/index">用户管理</a></li>
+                    <li name="menu"><a href="/admin/role/index">角色管理</a></li>
+                </ul>
+                <div class="subNav"><b class="arrow arrow-bottom"></b>个人设置</div>
+                <ul class="navContent">
+                    <li name="menu"><a href="/admin/change_password">修改密码</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div id="right">
+          <div id="header" class="bg-dark-blue">欢迎您 lovett | 最新功能 | 退出</div>
+          <div id="container">
+
+          </div>
+            <!--<iframe id="iframe" name="iframe" src="html/operate/user-manager.html" width="100%" height="auto" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>-->
+
+
+        </div>
+    </div>
+
+
+
+</body>
+</html>

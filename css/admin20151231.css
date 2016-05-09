@@ -1,0 +1,423 @@
+@charset "utf-8";
+/**
+  *全局样式开始
+  */
+html, body, dl, dt, dd, ul, ol, li ,h1, h2, h3, h4, h5, h6, pre,
+ form, fieldset,legend, input, p, blockquote, table,thead, tbody, tfoot,th, td, textarea, img,hr{margin: 0;padding: 0; border:0; outline:none; }
+body{ font-size:14px; background-color:#FFFFFF; color:#333; font-family: \5FAE\8F6F\96C5\9ED1,'helvetica neue',tahoma,'hiragino sans gb',stheiti,'wenquanyi micro hei',\5B8B\4F53,sans-serif;}
+fieldset { border: 0;}
+a img { border: 0; cursor: pointer; }
+img { vertical-align: middle;}
+address, caption, cite, code, em, strong, var { font-style: normal; font-weight: normal;}
+ul, ol { list-style: none;}
+caption, th{ text-align: left;}
+h1, h2, h3, h4, h5, h6{ font-weight:normal;}
+.bold { font-weight: bold;}
+.normal { font-weight: normal;}
+.hide,.hidden { display:none;}
+.show,.block { display: block;}
+.i-block { display: inline-block;}
+a:active { background-color: transparent;  }/*去掉 IE 10+ 点击链接时的灰色背景*/
+a:active, a:hover {outline: 0 none; }
+a {text-decoration:none; color:#333;  }
+a:hover {text-decoration:none;color:#468601; }
+.overflow-hidden { overflow: hidden;}
+p{ word-break:break-all;word-wrap:break-word;}
+.pointer { cursor: pointer;}
+.v-a-m { vertical-align:middle;}
+.v-a-top { vertical-align:top !important;}
+.v-a-bottom { vertical-align:bottom !important;}
+.inline-block { display:inline-block;}
+.blod { font-weight: bold;}
+.b { border:1px solid red;}
+h1 { font-weight: normal;}
+.clearfix { *zoom:1;}
+.clearfix:before, .clearfix:after {content: "";display: table; }
+.clearfix:after {clear: both;}
+.f-left{ float:left;}
+.f-right{ float:right;}
+.relative{ position:relative;}
+.absolute{ position:absolute;}
+.text-center{ text-align:center !important;}
+.text-left{ text-align:left;}
+.text-right{ text-align:right;}
+
+button,input,optgroup,select,textarea {font-family: inherit; margin: 0;font-size: 100%; outline:none}/* 1. 更正所有浏览器中字体不继承的问题 2. 更正所有浏览器中字号不继承的问题 3. 更正 Firefox 4+， Safari 5 和 Chrome 中外边距不同的问题；取消chrome下input和textarea的聚焦边框*/
+input,button {*overflow: visible;}
+button,select { text-transform: none;}
+button,html input[type="button"],input[type="reset"],input[type="submit"] { -webkit-appearance: button; cursor: pointer;}
+button[disabled],html input[disabled] { cursor: default;}
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box;padding: 0; *height: 13px; *width: 13px;  }
+button::-moz-focus-inner,input::-moz-focus-inner { padding: 0; border: 0;}/*移除 Firefox 3+ 的内边距*/
+textarea{overflow:auto; resize: vertical;}/*取消chrome下textarea可拖动放大*/
+select:disabled option:checked, option:disabled:checked { color: #D2D2D2;  }
+input::-moz-placeholder, textarea::-moz-placeholder {color: darkGray;opacity: 1;  }
+label{ vertical-align:middle; *vertical-align: middle;}
+select[size], select[multiple], select[size][multiple] {border: 1px solid #AAA; padding:0; }/*统一 select 样式, Firefox 中有 padding:1px 0*/
+/*全局样式结束*/
+
+/**
+  * 通用组件
+  */
+/*table组件*/
+.table { border-collapse: collapse; border-spacing: 0;}
+.table th,.table table th{
+    font-size:12px;
+    text-align:left;
+    height: 36px;
+    padding: 0px 5px;
+    background-color:#f5faf5;
+    word-break:keep-all;
+    font-weight:normal;
+    color: #848484;
+}
+.table tr,.table table tr{  border: 1px solid #e1ebe2; }
+/*.table thead th:first-child,.table tr td:first-child{ padding-left: 15px;}*/
+.table thead th:first-child,.table tr td:first-child{  text-align: center;}
+.table td,.table table td{
+    font-size:12px;
+    text-align:left;
+    padding:10px 5px;
+    word-break:break-all;
+}
+.table th a{ color:#848484; text-decoration: none;}
+.table th a:hover{ color:#848484; text-decoration: underline;}
+.table td a{ color:#3f7fd3; text-decoration: none;}
+.table td a:hover{ color:#003399; text-decoration: underline;}
+.table tbody tr:hover td{ background-color: #f9f9f9;  }
+
+/* inline-block 组件，清除空隙需在外层容器加上 dib-box，dib 可单独使用*/
+.dib {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+.dib-box {
+    font-size: 0; /* 所有浏览器 */
+    *word-spacing: -1px; /* IE6/7 */
+}
+@media (-webkit-min-device-pixel-ratio:0) {
+.dib-box {
+    letter-spacing: -5px; /* Safari 5- 等不支持 font-size: 0 的浏览器*/
+    }
+}
+.dib-box .dib {
+    vertical-align: middle;
+    font-size: 14px;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: inherit;
+}
+
+/*
+ *@ Name:       CSS 三角形组件
+ *@ Author:     一丝
+ *@ Update:     2013-9-29 16:05:04
+ *@ Usage:
+ */
+.arrow,.more-arrow {
+    font-size: 0;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    display: inline-block;
+    *display:inline;
+    *zoom:1;
+    border: 0 dashed transparent;
+}
+.arrow{
+    vertical-align: -6px;
+    border-width: 6px;
+}
+.more-arrow{
+    vertical-align: middle;
+    border-width: 4px;
+}
+
+.arrow-top {
+    border-bottom-style: solid;
+    border-bottom-color: #689800;
+}
+
+.arrow-bottom {
+    border-top-style: solid;
+    border-top-color: #689800;
+}
+.more-arrow-bottom {
+    border-top-style: solid;
+    border-top-color: #3f7fd3;
+}
+
+.arrow-left {
+    border-right-style: solid;
+    border-right-color: #689800;
+}
+
+.arrow-right {
+    border-left-style: solid;
+    border-left-color: #689800;
+}
+.more-arrow-right {
+    border-left-style: solid;
+    border-left-color: #3f7fd3;
+}
+
+/* ◤左上角 */
+.arrow-left-top {
+    border-top-style: solid;
+    border-top-color: #689800;
+    border-left-width: 0 !important;
+}
+
+/* ◥右上角 */
+.arrow-right-top {
+    border-top-style: solid;
+    border-top-color: #2AB2DF;
+    border-right-width: 0 !important;
+}
+
+/* ◣左下角 */
+.arrow-left-bottom {
+    border-bottom-style: solid;
+    border-bottom-color: #2AB2DF;
+    border-left-width: 0 !important;
+}
+
+/* ◢右下角 */
+.arrow-right-bottom {
+    border-bottom-style: solid;
+    border-bottom-color: #2AB2DF;
+    border-right-width: 0 !important;
+}
+
+/*更多*/
+
+/*难易度-星星*/
+.difficulty { overflow:hidden;}
+.difficulty li{ width:16px; height:16px; float:left; margin-right:5px; cursor: pointer;}
+.difficulty .easy{ background:url(/images/easy.png) no-repeat center;}
+.difficulty .hard{ background:url(/images/hard.png) no-repeat center;}
+.easy-hard{ background:url(/images/easy-hard.png) no-repeat; width:100px; height:16px; display: inline-block;}
+.star_0{ background-position:-105px 0px;}
+.star_1{ background-position:-84px 0px;}
+.star_2{ background-position:-63px 0px;}
+.star_3{ background-position:-42px 0px;}
+.star_4{ background-position:-21px 0px;}
+.star_5{ background-position:0px 0px;}
+.error{ color:#ff0000;}
+/*通用组件结束*/
+
+/**
+  *通用样式
+  */
+.color-black{ color:#000000;}
+.color-black1{ color:#3f3f3f;}
+.color-black-848484{ color:#848484;}
+.color-red{ color:#ff0000;}
+.color-grey{ color:#a0a0a0;}
+.color-green{ color:#468601;}
+a.color-green{ color:#468601;}
+.color-white{ color:#FFF;}
+.border-grey{ border:1px solid #cccccc;}
+.border-grey1{ border:1px solid #cccccc; border-bottom:none;}
+.border-left-grey{ border-left:1px solid #cccccc;}
+.border-right-grey{ border-right:1px solid #cccccc;}
+.border-bottom-grey{ border-bottom:1px solid #cccccc;}
+.border-bottom-black{ border-bottom:1px solid #000000;}
+.color-blue{ color:#0099ff;}
+.bg-grey{ background-color:#ccc;}
+.bg-grey1{ background-color:#f2f2f2;}
+a.color-blue {text-decoration:none; color:#0099ff;  }
+a.color-blue:hover{ text-decoration: underline;}
+.star{font-family:tahoma ;font-size:14px; color: #FF0000; vertical-align: middle;}/*让星号垂直居中*/
+/*通用文本框样式*/
+.input_text{ width: 156px; height: 28px; line-height: 28px;  padding: 0px 5px; border: 1px solid #cccccc;}
+.input_text:focus{ border: 1px solid #468601; box-shadow: 0 0 3px #468601;-moz-box-shadow: 0 0 3px #468601; -ms-box-shadow: 0 0 3px #468601;-o-box-shadow: 0 0 3px #468601; }
+/*通用表单查询按钮样式*/
+.btn-grey{ width: 72px; height: 30px; line-height: 28px; display: inline-block; border: 1px solid #cccccc;color: #636363; font-size: 14px; background-color: #f7f7f7; text-align: center; box-sizing: border-box;-moz-box-sizing: border-box; text-decoration: none;}
+.btn-grey:hover{   color: #86b02c; }
+.btn-green{ width: 82px; height: 30px; line-height: 30px; display: inline-block; color: #FFFFFF; font-size: 14px; background-color: #86b02c; text-align: center; text-decoration: none;}
+.btn-green:hover{ color: #FFFFFF;   background-color: #98c538; }
+/**
+  * 换肤颜色
+  */
+.bg-dark-blue{ background-color: #3c454e;}
+.bg-dark-blue1{ background-color: #30373f;}
+
+/**
+  * 后台框架布局
+  */
+
+
+
+#wapper{ min-width:1200px;  margin:0 auto;}
+#wapper #header{ height: 50px; overflow: hidden;}
+#wapper #header .logo{ width: 150px; height: 50px; line-height: 50px; text-align: center; float: left;}
+#wapper #header .top_menu a{ display: inline-block; float: left; height: 40px; line-height:40px; padding: 0px 20px; margin-top: 10px; color:#FFFFFF;}
+#wapper #header .top_menu a:hover{ background-color: #454e57; -webkit-border-top-left-radius: 6px;-webkit-border-top-right-radius: 6px; -moz-border-radius-topleft: 6px; -moz-border-radius-topright: 6px;}
+#wapper #header .top_menu a.selected{background-color: #FFF; color: #7ab63f; -webkit-border-top-left-radius: 6px;-webkit-border-top-right-radius: 6px; -moz-border-radius-topleft: 6px; -moz-border-radius-topright: 6px;}
+#wapper #header .user{height: 50px; line-height: 50px; color: #FFFFFF; text-align: right; overflow: hidden; padding-right: 20px;}
+#wapper #left{ width:150px; overflow-y: auto; float: left; }
+#wapper #left .colL div{ height: 40px; line-height: 40px; padding-left: 16px; text-align:left; font-size: 12px; color:#fff; cursor: pointer; }
+#wapper #left .colL div b{ float: right; margin-top: 16px; margin-right: 26px;}
+#wapper #left ul li a{ display:block; height: 40px; line-height: 40px; color:#fff; padding-left: 28px; text-align: left;cursor: pointer; background-color: #30373f;  }
+#wapper #left ul li a:hover{ background-color: #86b02c;}
+#wapper #right{   overflow-y: hidden; padding-left: 14px; padding-right: 26px;   }
+
+#container{position: relative; }
+#wapper  #leftMenuBtn{position: absolute; top: 45%; left: 137px; z-index: 100; cursor: pointer;}
+
+/*right 面包屑*/
+.location{ height: 30px; padding: 5px 0px; line-height: 30px; text-align: left; border-bottom: 1px solid #e1ebe2;}
+.location i{ height: 12px; width: 4px; background-color: #689800; display: inline-block; vertical-align:-1px; margin-left: 2px; margin-right: 10px;}
+.location .m_left15{ margin-left: 15px;}
+.location a:after{ content: ">";}
+/*right查询区*/
+.search{ padding: 6px 0px 6px 10px; margin-bottom: 6px;  background-color: #f7f7f7; font-size: 12px;  }
+.search p{ margin: 5px 5px; float: left;}
+.search .date{ width: 120px !important;}
+.search .between{ display: inline-block; padding: 0px 10px;}
+.search .search_btn{ width: 60px !important;}
+/*表头排序*/
+.table .sort_asc{ display: inline-block; padding-right: 15px; background: url("/images/b_03.png") no-repeat right;}
+.table .sort_desc{ display: inline-block; padding-right: 15px; background: url("/images/b_05.png") no-repeat right ;}
+
+/*鼠标移动到某行时，可编辑的字段后面显示编辑图标*/
+.table td input{ vertical-align: middle; border: 1px solid #cccccc; padding: 2px 4px;}
+.table td input[type="text"]:disabled{ background: transparent; border: none;}
+.table tr img.editImg{ visibility:hidden;}
+.table tr:hover img.editImg{ visibility:visible; cursor: pointer;}
+
+/*操作更多列表*/
+.table td.color_blue{color: #3f7fd3;}
+.table .more{ position: relative; cursor: pointer;}
+.table .more-list{  position: absolute;  left: 0px;  border: 1px solid #ccc; display: none; }
+.table .more-list li{word-break: keep-all; padding: 5px; background-color: #FFFFFF;}
+.table .more-list li:hover{ background-color: #f0f0f0;}
+.table .more-list-top1{ top: 26px;}
+.table .more-list-top2{ top: 20px;}
+/*没有查询到符合条件的信息*/
+.table .noMsg{ text-align: center; padding: 50px 0px;}
+
+/**
+  *add 添加
+  */
+.add_table { border-collapse: separate;}
+.add_table tr td:first-child{ word-break: keep-all;}
+.add_table .width340{ width: 340px !important;} /*input文本框*/
+.add_table .width170{ width: 170px !important; }/*下拉列表*/
+.add_table .check_text{ padding-left: 10px; padding-right: 40px;}
+.add_table .select_text{ width: 108px; padding:4px 5px;border: 1px solid #cccccc; }
+.add_table .t_area{ width: 550px !important;  min-height: 80px; line-height: normal !important; }
+.add_table .add_btn{ width: 120px; height: 40px; line-height: 40px; background-color: #86b02c; color: #FFFFFF; display: inline-block; text-align: center; font-size: 16px; text-decoration:none;}
+.add_table .add_btn:hover{ color: #FFFFFF;   background-color: #98c538; }
+.add_table .more_img img{ margin-right: 10px;}
+
+
+.scenic {padding:12px 15px;}
+.scenic .p-tb20{ padding: 20px 0px;}
+.scenic .m-bottom15{ margin-bottom: 15px;}
+.scenic .m-bottom20{ margin-bottom: 20px;}
+.scenic .m-top10{ margin-top: 10px;}
+.scenic .m-top15{ margin-top: 15px;}
+.scenic .m-top20{ margin-top: 20px;}
+.scenic .m-left10{ margin-left: 10px;}
+.scenic .m-left20{ margin-left: 20px;}
+.scenic .m-right5{ margin-right: 5px;}
+.scenic .p-bottom10{ padding-bottom: 10px;}
+.scenic .p-top5{ padding-top: 5px;}
+.scenic .p-top10{ padding-top: 10px;}
+.scenic .padding5{ padding:5px;}
+.scenic  .width90{ width: 100px; text-align: right; padding-right: 5px;}
+.scenic  .width120{ width: 120px; text-align: right; padding-right: 5px;}
+.scenic  .width170{ width: 170px !important; }
+.scenic  .width340{ width: 340px !important; }
+.scenic .errorMsg{ padding-left: 105px;  color: #FF0000; line-height: 1.5; }
+.scenic .errorMsg1{ padding-left: 125px;  color: #FF0000; line-height: 1.5;}
+.scenic .location{height:35px ; line-height:35px ; padding-left:15px;}
+.scenic .date{ background:url(/images/date.png) #FFF no-repeat right 6px;}
+.scenic  .date_w100{ width: 100px!important;}
+/*通用select框样式*/
+.scenic .select_text{ width: 108px; padding:4px 5px;border: 1px solid #cccccc; }
+.scenic .select_text_w200{ width: 200px !important;}
+.scenic .select_text_w255{ width: 255px !important;}
+.scenic .select_text:focus{border: 1px solid #468601; box-shadow: 0 0 3px #468601;}
+/*通用表单查询按钮样式*/
+.scenic .btn{ width: 96px; height: 30px; line-height: 26px; display: inline-block; border: 2px solid #468601;color: #468601; font-size: 16px; background-color: #f4f8ec; text-align: center; box-sizing: border-box;-moz-box-sizing: border-box; text-decoration: none;}
+.scenic .btn:hover{  border: 2px solid #366900; color: #468601; background-color: #FFFFFF; text-align: center;}
+/*通用添加、保存按钮样式*/
+.scenic  .add_btn{ width: 120px; height: 40px; line-height: 40px; background-color: #468601; color: #FFFFFF; display: inline-block; text-align: center; font-size: 18px; text-decoration:none;}
+.scenic  .add_btn_width96{ width: 100px !important; height: 34px !important; line-height:34px !important; font-size:16px !important; }
+.scenic  .add_btn:hover{  background-color: #366900; }
+.scenic .select_zone{ background-color: #f4f8ec; padding:30px 15px;}
+.scenic .select_zone .width75{ width: 75px; text-align: right; padding-right: 5px;}
+.scenic .check_text{ padding-left: 10px; padding-right: 40px;}
+.scenic .add_zone{ padding-top: 25px; padding-bottom: 17px;}
+
+/*添加景区、景点*/
+.scenic .scenic_add{ padding-top:25px; padding-bottom: 35px; }
+.scenic .scenic_add span.must{font-family:tahoma ;font-size:14px; color: #FF0000; vertical-align: middle;}/*让星号垂直居中*/
+.scenic .scenic_add .up_btn{ width: 110px; height: 30px; line-height: 30px; background-color: #86b02c; color: #FFFFFF; display: inline-block; text-align: center; }
+.scenic .scenic_add .up_btn:hover{  background-color: #366900; text-decoration: none; }
+.scenic .scenic_add .t_area{ width: 550px !important;  min-height: 80px;}
+.scenic .scenic_add .sub_btn{width: 140px !important; height: 50px!important; line-height: 50px !important; }
+.scenic .scenic_add .cancel{ width: 100%; position: absolute; left: 0px; bottom: 0px; height: 30px; line-height: 30px; background: rgba(0,0,0,.5);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000); color: #e0dfe0; text-align: center; cursor: pointer; }
+.scenic .scenic_add .m-left105{ margin-left: 105px;}
+.scenic .scenic_add .m-left125{ margin-left: 125px;}
+
+
+
+/*登录页面*/
+.login{  padding:35px; position:fixed; top:20%; left:50%; margin-left:-185px; border-bottom:1px solid #cccccc;border-left:1px solid #cccccc;border-right:1px solid #cccccc;border-top:4px solid #468601;}
+.login .m-bottom15{ margin-bottom: 15px;}
+.login .m-left15{ margin-left: 15px;}
+.login .p-top8{ padding-top: 5px;}
+.login .login_title{ height:55px; text-align:center; color:#3f3f3f; font-size:20px; }
+.login .dib-box .dib{ color:#848484; font-size:14px;}
+.login div.error{ height:30px; line-height: 30px;  padding-left: 59px;}
+.login .loginBtn{ width: 100%;  text-align: center; color: #FFFFFF; background-color: #468601; padding: 5px 0px;}
+.login .login_w225{ width:225px !important;padding: 2px 5px;}
+.login .login_w130{ width:140px !important;padding: 2px 5px;}
+
+
+
+
+
+/*前台浮动层弹窗提示*/
+.floatBox .fb_bg{ position:fixed; width:100%; height:100%;  background-color:#000;  filter: alpha(opacity=50); opacity: 0.5;-moz-opacity: 0.5; left:0; top:0; z-index: 1000;}
+.floatBox .fb_Box{ position:fixed; overflow:hidden; width:450px; min-height:170px;   z-index:1002; left:50%; top:45%; margin-left:-220px; margin-top:-85px;border-radius:5px;background-color:#FFF; }
+.floatBox .fb_header{ background-color:#86b02c;height:45px; line-height:45px; font-size:18px; padding-left:20px; border-top-left-radius:5px;border-top-right-radius:5px; color:#FFF; }
+.floatBox .fb_content{ padding:20px; font-size:18px; }
+.floatBox .fb_footer{ text-align:right; padding-right:20px; padding-bottom:20px;}
+.floatBox .fb_btn{ display: inline-block;  text-align:center;  vertical-align:middle; color:#fff;-webkit-border-radius:3px;-moz-border-radius:3px; -ms-border-radius:3px; border-radius:3px; cursor:pointer; width:110px; height:40px; line-height:40px; font-size:18px; background:#468601; text-decoration:none;}
+.floatBox .fb_btn:hover{ background:#366900;}
+/*加载中*/
+.loading{   height:50px; line-height:50px;  position:fixed; z-index:10002; top:30%; left:50%;  color:#FFF; border-radius:3px; text-align:left; margin-left: -16px;  }
+/*浮动层提示*/
+.floatInfo{  height:50px; line-height:50px; background-color:#000;  filter: alpha(opacity=50); opacity: 0.5;-moz-opacity: 0.5; position:fixed; z-index:10; top:30%; left:50%; margin-left:-100px; color:#FFF; border-radius:3px; text-align:left; padding:0px 15px;}
+
+
+/*分页通用样式*/
+
+#page{  text-align: center; background-color: #f0f0f0; height:30px; padding: 5px 0px; position: fixed; bottom: 10px; _position:absolute; _top:expression(documentElement.scrollTop+documentElement.clientHeight-this.offsetHeight); width: 86%; }
+.pages_left{ float: left; padding-left: 17px;}
+.pages_left .fb{ width: 72px !important; margin-left: 25px; margin-right: 15px;}
+.pages_right{  text-align: right; height:30px; padding-right: 20px;}
+.pages_right  a.number{display:inline-block; width: 28px; height: 28px; line-height: 28px;  background-color:#fff; color:#848484;  text-align:center; border:1px solid #ccc;  white-space:nowrap; text-decoration: none; margin: 0px 3px;}
+.pages_right  a.number:hover{width: 26px; height: 26px; line-height: 26px; border:2px solid #86b02c;  }
+.pages_right  strong{display:inline-block;width: 26px; height: 26px; line-height: 26px; background-color:#fff; color:#848484;  text-align:center; border:2px solid #86b02c;  white-space:nowrap; text-decoration: none; margin: 0px 3px;}
+.pages_right  .pre_page,.pages_right .next_page{display:inline-block;  width: 58px; height: 28px; line-height: 28px; text-align:center; border:1px solid #dcdcdc ; white-space:nowrap; background-color: #FFFFFF; }
+.pages_right  a.pre_page,.pages_right a.next_page{color:#848484; text-decoration: none;}
+.pages_right  span.pre_page,.pages_right span.next_page{ cursor:default; color:#dcdcdc;}
+.pages_right  .page_search{ width:35px !important;}
+.pages_right  .sure{  background-color:#f7f7f7; cursor: pointer; }
+
+/*点击图片缩略图弹出浮层显示大图样式*/
+.showImg .mskeLayBg { background: #000; width: 100%; height:100%; position: fixed; left: 0px; top: 0px; z-index: 10000; opacity: 0.7; filter: alpha(opacity=70); display: none; _display:none!important }
+.showImg .mskelayBox { height: 488px; width: 800px; margin-top: -251px; margin-left: -407px; position: fixed; left: 50%; top: 50%; border: 7px solid #FFF; z-index: 20; background: #FFF; display: none; _display:none!important; z-index: 10001; }
+.showImg .mskeClaose { position: absolute; top: -17px; right: -17px; cursor: pointer; }
+
+
+
+
+

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <link rel="stylesheet" href="/css/admin.css"/>
+    <script src="/js/base/jquery-1.7.1.min.js"></script>
+</head>
+<body>
+    <div id="wapper">
+        <div id="header" class="bg-dark-blue clearfix">
+            <a class="logo" href="javascript:;">小树创投</a>
+            <div class="top_menu"><a href="javascript:;" class="selected" data-menu="leftMenu1.html">内容管理</a><a href="javascript:;" data-menu="leftMenu2.html">内容管理</a><a href="javascript:;" data-menu="leftMenu3.html">内容管理</a></div>
+            <div class="user">欢迎您 lovett | 最新功能 | 退出</div>
+        </div>
+        <div id="container">
+            <div id="left" class="bg-dark-blue show">
+                <div class="colL" id="left_menu">
+                    <div class="subNav"><b class="arrow arrow-bottom"></b>运营管理</div>
+                    <ul class="navContent" style="display:block">
+                        <li name="menu"><a href="/scenic/search">用户管理</a></li>
+                    </ul>
+                    <div class="subNav"><b class="arrow arrow-bottom"></b>景区信息管理</div>
+                    <ul class="navContent">
+                        <li name="menu"><a href="javascript:;" data-url="right.html" class="selected">景区管理</a></li>
+                        <li name="menu"><a href="javascript:;" data-url="add.html">班次管理</a></li>
+                        <li name="menu"><a href="javascript:;" data-url="edit.html">车辆管理</a></li>
+                        <li name="menu"><a href="javascript:;" data-url="/app/suggest/index">司机管理</a></li>
+                        <li name="menu"><a href="javascript:;" data-url="/app/suggest/index">随车人员管理</a></li>
+                    </ul>
+                    <div class="subNav"><b class="arrow arrow-bottom"></b>销售管理</div>
+                    <ul class="navContent">
+                        <li name="menu"><a href="/admin/user/index">车票管理</a></li>
+                        <li name="menu"><a href="/admin/role/index">优惠券管理</a></li>
+                        <li name="menu"><a href="/admin/user/index">线路次卡管理</a></li>
+                        <li name="menu"><a href="/admin/role/index">次卡活动管理</a></li>
+                        <li name="menu"><a href="/admin/role/index">次卡管理</a></li>
+                    </ul>
+                    <div class="subNav"><b class="arrow arrow-bottom"></b>系统设置</div>
+                    <ul class="navContent">
+                        <li name="menu"><a href="/admin/user/index">用户管理</a></li>
+                        <li name="menu"><a href="/admin/role/index">角色管理</a></li>
+                    </ul>
+                    <div class="subNav"><b class="arrow arrow-bottom"></b>个人设置</div>
+                    <ul class="navContent">
+                        <li name="menu"><a href="/admin/change_password">修改密码</a></li>
+                    </ul>
+
+                </div>
+            </div>
+            <div id="middle">
+                <div class="relative">
+                    <a href="javascript:;" class="leftMenuBtnHide show"></a>
+                    <a href="javascript:;" class="leftMenuBtnShow hide"></a>
+                </div>
+            </div>
+            <div id="right"></div>
+
+        </div>
+    </div>
+    <script src="/js/base/base_a.js"></script>
+    <script src="/js/base/container.js"></script>
+    <script type="text/javascript">
+        $(function(){
+//            TVC.loadHTML("right.html");
+//            TVC.refresh();
+        });
+    </script>
+
+
+
+</body>
+</html>

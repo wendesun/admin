@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>登陆页面</title>
+    <link rel="stylesheet" href="css/admin.css"/>
+	
+</head>
+<body>
+   <div class="location clearfix"><i></i><a href="javascript:;" data-url="right.html">景区管理</a>&nbsp;&gt;&nbsp;线路管理<a href="javascript:;"  data-url="add.html" class="btn-green m_left15 f-right">添加景区</a><input type="button"  class="btn-grey f-right" value="刷新" data-refresh="right.html"></div>
+    <div class="search">
+        <div class="clearfix">
+            <p><label>商家名称：</label><input type="text" name="" class="input_text"/></p>
+            <p><label>选择地区：</label>
+                <select class="select_text " name="province">
+                    <option value="" selected="selected">请选择省份</option>
+                </select>&nbsp;&nbsp;
+                <select class="select_text " name="city">
+                    <option value="" selected="selected">请选择城市</option>
+                </select>&nbsp;&nbsp;
+                <select class="select_text " name="region">
+                    <option value="" selected="selected">请选择地区</option>
+                </select>
+            </p>
+            <p><label>审核状态：</label>
+                <input type="radio" name="status" value="0"/><span>待审核</span>
+                <input type="radio" name="status" value="1"/><span>已通过</span>
+                <input type="radio" name="status" value="2"/><span>已拒绝</span>
+                <input type="radio" name="status" value=""/><span style="padding-right: 0px;">全部</span></p>
+            <p><label>审核状态：</label><input type="checkbox"/><span>待审核</span><input type="checkbox"/><span>已通过</span><input type="checkbox"/><span>已拒绝</span><input type="checkbox"/><span>全部</span></p>
+
+            <p><label>提现日期：</label><input type="text" id="withdraw_time_start" onclick="laydate({elem: '#withdraw_time_start'});" name="withdraw_time_start" class="input_text date"><span class="between">至</span><input type="text" id="withdraw_time_end" onclick="laydate({elem: '#withdraw_time_end'});" name="withdraw_time_end" class="input_text date">
+            </p>
+            <p ><label>支付平台：</label><select class="select_text select_width146" name="pay_type">
+                <option value="" selected="selected">全部</option>
+                <option value="1">微信</option>
+            </select>
+            </p>
+            <p>下单日期：<input type="button" value="最近7天" date_recent="7" class="btn-grey recent">&nbsp;&nbsp;<input type="button" date_recent="15" value="最近15天" class="btn-grey recent">&nbsp;&nbsp;<input type="button" date_recent="30" value="最近30天" class="btn-grey recent">&nbsp;&nbsp;&nbsp;&nbsp;<input id="add_time_start" data-time-start="" onclick="laydate({elem: '#add_time_start',choose:function(){$('.recent').removeAttr('recentClickInfo').css({'backgroundColor':'#f7f7f7','color':'#000'})}});" name="add_time_start" type="text" class="input_text date"><span class="between">至</span><input id="add_time_end" data-time-end="" onclick="laydate({elem: '#add_time_end',choose:function(){$('.recent').removeAttr('recentClickInfo').css({'backgroundColor':'#f7f7f7','color':'#000'})}});" name="add_time_end" type="text" class="input_text date"></p>
+            <p><input type="button" id="zink_search" class="btn-grey search_btn" value="查询"/></p>
+        </div>
+    </div>
+   <table width="100%" border="0" cellspacing="0" cellpadding="0" class="list-table">
+       <thead>
+       <tr>
+           <th width="40"><input type="checkbox" name="items"/></th>
+           <th width="50">ID</th>
+           <th><a href="#" class="sort_asc">景区名称</a></th>
+           <th>地区</th>
+           <th width="80"><div class="more"><a href="#" class="sort_desc" data-more="list">状态(全部)</a>
+               <ul class="more-list more-list-top1" style="display: block;" data-list="list">
+                   <li>编辑</li>
+                   <li>发布离线包</li>
+                   <li>删除</li>
+               </ul>
+           </div></th>
+           <th width="60"><a href="#" class="sort_desc">景点数量</a></th>
+           <th width="70">更新者</th>
+           <th width="90"><a href="#" class="sort_desc">更新时间</a></th>
+           <th width="90"><a href="#" class="sort_desc">发布时间</a></th>
+           <th width="160">操作</th>
+       </tr>
+       </thead>
+       <tbody>
+       <tr>
+           <td><input type="checkbox" name="items"/></td>
+           <td>235</td>
+           <td><input type="text" disabled="disabled" value="宫故宫故宫故宫"  class="" id="abcd" data-title="edit"/>&nbsp;<img src="images/c_03.png" alt="" class="editImg" />
+           </td>
+           <td>北京</td>
+           <td>已发布</td>
+           <td title="点击查看景点列表" ><a action="/scenic/spot/search" class="countSpot" count="1" href="/scenic/spot/search?scenicId=235" show_text="1" target="_blank">1</a>
+           </td>
+           <td>ywzhao</td>
+           <td>2015-12-28<br>10:27</td>
+           <td>2015-12-28<br>10:27</td>
+           <td name="operate" class="color_blue operate_box">
+               <span name="release_operate"><a action="/scenic/update" href="javascript:;" url="/scenic/update?id=235" name="release" class="editConfirm" status="1">编辑</a></span>&nbsp;&nbsp;|&nbsp;&nbsp;
+               <span><a class="deleteScenic" action="/scenic/delete" url="/scenic/delete" href="javascript:;" deleteid="235">删除</a></span>&nbsp;&nbsp;|&nbsp;&nbsp;
+               <span><a action="/scenic/show" href="/scenic/show?id=235" target="_blank">查看</a></span>
+               <br>
+                <span name="unrelease_operate">                <a action="/scenic/publish" href="javascript:;" url="/scenic/publish" operation="0" pubid="235" class="nopublish">取消发布</a>
+                </span>&nbsp;&nbsp;|&nbsp;&nbsp;
+
+               <div  class="more inline-block">
+                   <a href="javascript:;" data-more="list">更多</a>&nbsp;<b class="more-arrow more-arrow-bottom"></b>
+                   <ul class="more-list more-list-top2" data-list="list">
+                       <li>编辑</li>
+                       <li>发布离线包</li>
+                       <li>删除</li>
+                   </ul>
+               </div>
+           </td>
+       </tr>
+       <tr>
+           <td><input type="checkbox" name="items"/></td>
+           <td>234</td>
+           <td><a action="/scenic/show" href="/scenic/show?id=234" show_text="test-北京北海公园" class="scenicNameLink" target="_blank">test-北京北海公园</a></td>
+           <td>北京</td>
+           <td>已发布</td>
+           <td title="点击查看景点列表"><a action="/scenic/spot/search" class="countSpot" count="1" href="/scenic/spot/search?scenicId=234" show_text="1" target="_blank">1</a></td>
+           <td>jou</td>
+           <td>2015-12-26<br>17:29</td>
+           <td>2015-12-26<br>16:24</td>
+           <td name="operate" class="color_blue operate_box">
+               <span name="release_operate"><a action="/scenic/update" href="javascript:;" url="/scenic/update?id=234" name="release" class="editConfirm" status="1">编辑</a></span>&nbsp;&nbsp;|&nbsp;&nbsp;
+               <span><a class="deleteScenic" action="/scenic/delete" url="/scenic/delete" href="javascript:;" deleteid="234">删除</a></span>&nbsp;&nbsp;|&nbsp;&nbsp;
+               <span><a action="/scenic/show" href="/scenic/show?id=234" target="_blank">查看</a></span>
+               <br>
+                <span name="unrelease_operate">                <a action="/scenic/publish" href="javascript:;" url="/scenic/publish" operation="0" pubid="234" class="nopublish">取消发布</a>
+                </span>&nbsp;&nbsp;|&nbsp;&nbsp;
+               <span name="add_operate"><a action="/scenic/spot/add" href="/scenic/spot/add?scenicId=234" target="_blank">添加景点</a></span>
+
+           </td>
+       </tr>
+       <tr>
+           <td><input type="checkbox" name="items"/></td>
+           <td>222</td>
+           <td><a action="/scenic/show" href="/scenic/show?id=222" show_text="鸟巢" class="scenicNameLink" target="_blank">鸟巢</a></td>
+           <td>北京</td>
+           <td>已发布</td>
+           <td title="点击查看景点列表"><a action="/scenic/spot/search" class="countSpot" count="3" href="/scenic/spot/search?scenicId=222" show_text="3" target="_blank">3</a></td>
+           <td>lliu</td>
+           <td>2015-12-26<br>16:21</td>
+           <td>2015-12-26<br>16:21</td>
+           <td name="operate" class="color_blue operate_box">
+               <span name="release_operate"><a action="/scenic/update" href="javascript:;" url="/scenic/update?id=222" name="release" class="editConfirm" status="1">编辑</a></span>&nbsp;&nbsp;|&nbsp;&nbsp;
+               <span><a class="deleteScenic" action="/scenic/delete" url="/scenic/delete" href="javascript:;" deleteid="222">删除</a></span>&nbsp;&nbsp;|&nbsp;&nbsp;
+               <span><a action="/scenic/show" href="/scenic/show?id=222" target="_blank">查看</a></span>
+               <br>
+                <span name="unrelease_operate">                <a action="/scenic/publish" href="javascript:;" url="/scenic/publish" operation="0" pubid="222" class="nopublish">取消发布</a>
+                </span>&nbsp;&nbsp;|&nbsp;&nbsp;
+               <span name="add_operate"><a action="/scenic/spot/add" href="/scenic/spot/add?scenicId=222" target="_blank">添加景点</a></span>
+
+           </td>
+       </tr>
+       <tr><td colspan="10"><div class="noMsg">没有查询到符合条件的信息</div></td></tr>
+
+       </tbody>
+   </table>
+   <div id="foot_box">
+
+       <div class="page_bg">
+           <div class="pages_right" id="pages">  <input type="hidden" name="pages" value="2"><input type="hidden" url="/scenic/search" name="p" value="1"><span class="pre_page">上一页</span> | <strong>1</strong><a href="javascript:;" class="number">2</a> | <a href="javascript:;" class="next_page">下一页</a>&nbsp;&nbsp;共32页&nbsp;,&nbsp;<span id="page_index">到第&nbsp;<input type="text" name="page_index" class="input_text page_search">&nbsp;页&nbsp;<input type="button" name="confirm" value="确定" class="btn-grey"></span>  </div>
+           </div>
+   </div>
+
+
+   <script src="js/admin/right.js"></script>
+</body>
+</html>

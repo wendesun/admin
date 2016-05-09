@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <link rel="stylesheet" href="css/admin.css"/>
+
+</head>
+<body>
+<div class="location clearfix"><i></i><a href="javascript:;" data-url="right.html">景区管理</a>&nbsp;&gt;&nbsp;线路管理<a href="javascript:;"  data-url="add.html" class="btn-green m_left15 f-right">添加景区</a><input type="button"  class="btn-grey f-right" value="刷新" data-refresh="right.html"></div>
+
+   <table width="100%" border="0" cellspacing="14" cellpadding="0" class="add_table">
+       <tr>
+           <td align="right" width="105"><span class="star">*</span>&nbsp;景区名称：</td>
+           <td align="left" width=""><input class="input_text width340">&nbsp;&nbsp;<span class="color-grey">还可输入&nbsp;<span class="color-green bold" id="scenicNameCountNum" max="20">20</span>&nbsp;个字符</span></td>
+       </tr>
+       <tr>
+           <td align="right"><span class="star">*</span>&nbsp;景区星级：</td>
+           <td align="left">
+               <input type="radio" name="star" value="5"><span class="check_text">5</span>
+               <input type="radio" name="star" value="4"><span class="check_text">4</span>
+               <input type="radio" name="star" value="3"><span class="check_text">3</span>
+               <input type="radio" name="star" value="2"><span class="check_text">2</span>
+               <input type="radio" name="star" value="1"><span class="check_text">1 </span>
+           </td>
+       </tr>
+       <tr>
+           <td align="right"><span class="star">*</span>&nbsp;选择地区：</td>
+           <td align="left">
+               <select class="select_text width170" name="province">
+                   <option value="">请选择省份</option>
+                   <option value="北京">北京</option>
+                   <option value="天津">天津</option>
+                   <option value="上海">上海</option>
+                   <option value="重庆">重庆</option>
+               </select>&nbsp;
+               <select class="select_text width170" name="city">
+                   <option value="">请选择省份</option>
+                   <option value="北京">北京</option>
+                   <option value="天津">天津</option>
+                   <option value="上海">上海</option>
+                   <option value="重庆">重庆</option>
+               </select>
+           </td>
+       </tr>
+       <tr>
+           <td align="right"><span class="star">*</span>&nbsp;景区坐标：</td>
+           <td align="left">
+               <input class="input_text width340" name="lnglat" value="">&nbsp;&nbsp;<span class="color-grey">经纬度用&nbsp;"|"&nbsp;个分隔</span>
+           </td>
+       </tr>
+       <tr>
+           <td align="right"><span class="star">*</span>&nbsp;景区图片：</td>
+           <td align="left">
+               <input id='scenic_pid' type='hidden' name='scenic_pid' value=''>
+               <input type="file" id='upload_scenic'/><span class="color-grey">&nbsp;&nbsp;支持jpg/jpeg，png格式，大小在2M以内，只能上传1张图片</span>
+           </td>
+       </tr>
+       <tr>
+           <td align="right"><span class="star">*</span>&nbsp;语音上传：</td>
+           <td align="left">
+               <input id='audio_id'  name='audio_id' value=''/>
+               <div class="dib color-grey">&nbsp;&nbsp;只支持mp3格式，大小在10M以内，只能上传1段语音</div>
+           </td>
+       </tr>
+       <tr>
+           <td align="right"><span class="star">*</span>&nbsp;景区地图：</td>
+           <td align="left">
+               <input id='map_pid' type='hidden' name='map_pid' value='<{$map_pid}>'>
+               <input type="file" id='upload_map'/><div class="dib color-grey">&nbsp;&nbsp;支持jpg/jpeg，png格式，大小在10M以内，只能上传1张图片</div>
+           </td>
+       </tr>
+       <tr>
+           <td align="right" class="v-a-top"><span class="star">*</span>&nbsp;景区宣传语：</td>
+           <td align="left">
+                <div class=" border-grey text-right f-left">
+                    <textarea  class="input_text t_area" name="publicity" type="text/plain" style=" border: 0px;">啊啊啊啊啊啊</textarea>
+                    <br/><span class="color-red">-20</span>&nbsp;字符
+                </div>
+
+               <div class="relative f-left hide">
+               <textarea id="publicity" class="input_text t_area" name="publicity" type="text/plain">啊啊啊啊啊啊</textarea>
+               <div class="absolute color-grey" style=" bottom: 8px; right: 10px;"><span class="color-red">-20</span>&nbsp;字符</div>
+               </div>
+           </td>
+       </tr>
+       <tr>
+           <td align="right" class="v-a-top"><span class="star">*</span>&nbsp;景区简介：</td>
+           <td align="left">
+               <script id="description" class="i-block" name="description" type="text/plain">啊啊啊啊啊啊</script>
+           </td>
+       </tr>
+       <tr>
+           <td align="right" class="v-a-top"><span class="star">*</span>&nbsp;景区简介：</td>
+           <td align="left">
+               <textarea  class="input_text t_area" name="publicity" type="text/plain">啊啊啊啊啊啊</textarea>
+           </td>
+       </tr>
+       <tr>
+           <td align="right"></td>
+           <td align="left">
+               <input id="addScenicFormSubmit" type="button" class="add_btn" value="保存">
+           </td>
+       </tr>
+   </table>
+
+
+
+
+</body>
+</html>

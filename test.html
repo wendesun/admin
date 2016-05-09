@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="/js/base/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript">
+            $(function(){
+                //var u='http://192.168.2.11:821/test.html?test={"title":"这是一个测试信息","url":"http://aibang.com"}'
+    /*            $("a").click(function(){
+                    var a1=$(this).attr("href");
+                    var a2={"title":"这是一个测试信息","url":"http://aibang.com"};
+                    var a3=a1+a2
+                    window.location.href=a1;
+                });*/
+
+                var url=window.location.href;
+                var p=url.indexOf("title=")+6;
+                var a=url.substring(p);
+                alert(a);
+
+            });
+    </script>
+</head>
+<body>
+<a href='http://192.168.2.11:821/test.html?title=%e8%bf%99%e6%98%af%e4%b8%80%e4%b8%aa%e6%b5%8b%e8%af%95%e4%bf%a1%e6%81%af'>测试</a>
+</body>
+</html>

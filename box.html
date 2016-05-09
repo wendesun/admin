@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>弹框</title>
+    <link rel="stylesheet" href="css/admin.css"/>
+	
+</head>
+<body>
+<input type="button" value="弹框" class="btn-green" data-id="_tmp_confirm_message1"/>&nbsp;&nbsp;<input type="button" value="新增用户" class="btn-green" data-id="_tmp_confirm_message2"/>
+<!--弹框-->
+<div id="_tmp_confirm_message1" class="floatBox hide"><div class="fb_bg"></div><div class="fb_Box"><div class="fb_header">提示</div><div id="fb_content" class="fb_content">aaaaaaaaaaaaa</div><div class="fb_footer"><input type="submit" name="yes" class="fb_btn" value="确定" id="pager" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" name="no" class="fb_btn" value="取消" /></div></div></div>
+
+<!--添加/修改用户信息-->
+<div id="_tmp_confirm_message2" class="add-alter-user hide" >
+        <div class="fb_bg"></div>
+        <div class="fb_Box">
+            <div class="fb_header">添加/修改用户信息 <img src="images/close2.png" width="30" height="30" alt="" class="close"/></div>
+            <div id="fb_content2" class="fb_content">
+                <table border="0" cellpadding="0" cellspacing="10" width="100%">
+                    <tr>
+                        <td width="80" nowrap="nowrap" align="right"><span class="star f-left ">*</span>用户名：</td>
+                        <td><input type="text" class="input_text"/>&nbsp;&nbsp;<span class="color-grey">还可输入20字符</span></td>
+                    </tr>
+                    <tr><td></td><td class="color-red">用户名重复，请重新输入</td></tr>
+                    <tr>
+                        <td align="right"><span class="star f-left">*</span>姓名：</td>
+                        <td><input type="text" class="input_text"/>&nbsp;&nbsp;<span class="color-grey">还可输入20字符</span></td>
+                    </tr>
+                    <tr><td></td><td class="color-red">用户名重复，请重新输入</td></tr>
+                    <tr>
+                        <td align="right"><span class="star f-left">*</span>邮箱：</td>
+                        <td><input type="text" class="input_text"/>&nbsp;&nbsp;<span class="color-grey">还可输入20字符</span></td>
+                    </tr>
+                    <tr>
+
+                        <td align="right"><span class="star f-left">*</span>操作城市：</td>
+                        <td><input type="text" class="input_text" style="width: 240px;"/>&nbsp;&nbsp;<span class="color-grey">*全国表示全部城市；空表示无城市；多城市用英文’,‘分隔</span></td>
+                    </tr>
+                    <tr>
+                        <td align="right" valign="top"><span class="star f-left">*</span>用户角色：</td>
+                        <td><input type="checkbox" value="21" name="roles_id">&nbsp;jou&nbsp;&nbsp;
+                            <input type="checkbox" value="20" name="roles_id">&nbsp;测试角色1&nbsp;&nbsp;
+                            <input type="checkbox" value="24" name="roles_id">&nbsp;测试用户2&nbsp;&nbsp;
+                            <input type="checkbox" value="23" name="roles_id">&nbsp;11&nbsp;&nbsp;
+                            <input type="checkbox" value="15" name="roles_id">&nbsp;12&nbsp;&nbsp;
+                            <input type="checkbox" value="22" name="roles_id">&nbsp;lliu&nbsp;&nbsp;
+                            <input type="checkbox" value="17" name="roles_id">&nbsp;dshgoe&nbsp;&nbsp;
+                            <input type="checkbox" value="19" name="roles_id">&nbsp;idaoyou-small&nbsp;&nbsp;
+                            <input type="checkbox" value="18" name="roles_id">&nbsp;idaoyou去删除&nbsp;&nbsp;
+                            <input type="checkbox" value="16" name="roles_id">&nbsp;gogoogogo&nbsp;&nbsp;
+                            <input type="checkbox" value="13" name="roles_id">&nbsp;cccccc&nbsp;&nbsp;
+                            <input type="checkbox" value="14" name="roles_id">&nbsp;2w2w2w&nbsp;&nbsp;
+                            <input type="checkbox" value="12" name="roles_id">&nbsp;aaaaaa &nbsp;&nbsp;
+                            <input type="checkbox" value="11" name="roles_id">&nbsp;ddddddddd&nbsp;&nbsp;
+                            <input type="checkbox" value="10" name="roles_id">&nbsp;ddddd&nbsp;&nbsp;
+                            <input type="checkbox" value="9" name="roles_id">&nbsp;ddddddddddd&nbsp;&nbsp;
+                            <input type="checkbox" value="8" name="roles_id">&nbsp;eeeeeeee&nbsp;&nbsp;
+                            <input type="checkbox" value="7" name="roles_id">&nbsp;eeeee&nbsp;&nbsp;
+                            <input type="checkbox" value="6" name="roles_id">&nbsp;aaa&nbsp;&nbsp;
+                            <input type="checkbox" value="5" name="roles_id">&nbsp;tttt&nbsp;&nbsp;
+                            <input type="checkbox" value="4" name="roles_id">&nbsp;dddddddddddd&nbsp;&nbsp;
+                            <input type="checkbox" value="3" name="roles_id">&nbsp;sss&nbsp;&nbsp;
+                            <input type="checkbox" value="1" name="roles_id">&nbsp;超级管理员&nbsp;&nbsp;
+                            <input type="checkbox" value="2" name="roles_id">&nbsp;swd&nbsp;&nbsp;</td>
+                    </tr>
+                </table>
+                
+            </div>
+            <div class="fb_footer"><input type="submit" name="yes" class="btn-green" value="确定" id="pager" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" name="no" class="btn-grey" value="取消" /></div>
+        </div>
+</div>
+
+<!--点击小图片弹出浮层显示大图-->
+<div id="content"><a rel="example_group" href="images/10_b.jpg" title=""><img src="images/10_b.jpg" alt="" height="140" /></a><a rel="example_group" href="images/11_b.jpg" title=""><img src="images/11_b.jpg" alt="" height="140" /></a></div>
+<script src="js/base/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+<script type="text/javascript" src="js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+<link rel="stylesheet" type="text/css" href="js/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+<script type="text/javascript">
+    $(document).ready(function() {
+        //点击小图片弹出浮层显示大图
+        $("a[rel=example_group]").fancybox({
+            'transitionIn'		: 'none',
+            'transitionOut'		: 'none'/*,
+             'titlePosition' 	: 'over',
+             'titleFormat'		: function(title, currentArray, currentIndex, currentOpts) {
+             return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+             }*/
+        });
+
+        $("input[data-id]").click(function(){
+            var id=$(this).attr("data-id");
+            $("#"+id).toggleClass("hide");
+        });
+    });
+</script>
+</body>
+</html>

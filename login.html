@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <link rel="stylesheet" href="css/admin.css"/>
+</head>
+
+<body >
+
+<div class="login border-grey">
+    <div class="login_title bold">i导游后台管理系统</div>
+    <form name="login" action="/admin/login" method="post" onsubmit="return checkLoginData(this);">
+        <div class="dib-box m-bottom15">
+            <span class="dib  ">用户名：&nbsp;</span>
+            <span class="dib"><input type="text" name="name" value="<{$query.name}>" class="input_text login_w225"/></span>
+        </div>
+        <div class="dib-box m-bottom15">
+            <span class="dib "><span style="padding-right: 1em;">密</span>码：&nbsp;</span>
+            <span class="dib"><input type="password" name="password" value="<{$query.password}>" class="input_text login_w225"/></span>
+
+        </div>
+        <div class="dib-box">
+            <span class="dib">验证码：&nbsp;</span>
+            <span class="dib"><input type="text" name="captcha" class="input_text login_w130"/></span>
+            <span class="dib"><img id="img" src="/captcha/image" width="68" height="33" class="m-left15 pointer" onclick="RefreshPic('img');"/></span>
+        </div>
+        <div class="error">
+            <div class="color-red" id="errormsg" <{if !$errmsg }>style="display:none"<{/if}>><{$errmsg}></div>
+        </div>
+        <div ><input type="submit"  class="loginBtn" value="登  录" /></div>
+        <div class="p-top8 text-right"><a class="color-green" href="/admin/findPassword">忘记密码？</a></div>
+
+</form>
+</div>
+</body>
+<script type="text/javascript">
+    function checkLoginData(obj)
+    {
+        var name = obj.name.value;
+        var pass = obj.password.value;
+        var code = obj.captcha.value;
+        jQuery("#errormsg").hide();
+        if ('' == name) {
+            jQuery("#errormsg").html('请输入用户名');
+            jQuery("#errormsg").show();
+            return false;
+        }
+
+        if ('' == pass) {
+            jQuery("#errormsg").html('请输入密码');
+            jQuery("#errormsg").show();
+            return false;
+        }
+
+        if ('' == code) {
+            jQuery("#errormsg").html('请输入验证码');
+            jQuery("#errormsg").show();
+            return false;
+        }
+    }
+
+    function RefreshPic(cc)
+    {
+        jQuery("#" + cc).attr('src', "/captcha/image?_t=" + Math.random());
+    }
+ /*   $("#right,.wapper").css("border", "none");
+    $("body").css("backgroundColor", "#FFF");*/
+</script>
+</html>
